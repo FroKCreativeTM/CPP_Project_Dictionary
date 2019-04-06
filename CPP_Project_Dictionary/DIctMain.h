@@ -2,10 +2,16 @@
 
 #include "Defines.h"
 
-class DIctMain
+class DictMain
 {
+private : 
+	static DictMain* instance;
+
 public:
-	DIctMain();
-	~DIctMain();
+	DictMain();
+	~DictMain();
+	static DictMain* GetInstance();
+	static void DestInstance();
+	void Run();
 };
 

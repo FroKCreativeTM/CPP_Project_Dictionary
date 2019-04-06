@@ -5,6 +5,8 @@
 #include <fstream>
 #include <Windows.h>
 
+#include "Macro.h"
+
 using namespace std;
 
 typedef wchar_t wchar;
