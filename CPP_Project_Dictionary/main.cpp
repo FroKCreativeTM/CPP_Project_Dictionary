@@ -10,7 +10,7 @@ int main()
 		return 0;
 	}
 
-	DictMain::GetInstance()->Run();
+	DictMain::GetInstance()->MainRun();
 
 	DictMain::DestInstance();
 

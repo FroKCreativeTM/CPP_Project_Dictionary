@@ -4,17 +4,24 @@
 #include <string>
 #include <fstream>
 #include <Windows.h>
+using namespace std;
 
 #include "Macro.h"
 
-using namespace std;
 
 typedef wchar_t wchar;
 
-// 추가할 헤더를 쓰십시오.
-
-struct _tagDictWord
+typedef struct _tagDictWord
 {
 	wchar word;
 	wchar meaning;
+}DictWord;
+
+enum MAINMENU
+{
+	MM_NONE=0,
+	MM_SEARCH,
+	MM_SAVED,
+	MM_EXIT,
+	MM_DEVELOP
 };

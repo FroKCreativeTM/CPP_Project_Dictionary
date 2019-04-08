@@ -1,10 +1,14 @@
 #include "FileIO.h"
 
-FileIO::FileIO()
+FileIO::FileIO() {}
+FileIO::~FileIO() {}
+
+void FileIO::Save()
 {
+
 }
 
-
-FileIO::~FileIO()
+void FileIO::Load()
 {
+
 }

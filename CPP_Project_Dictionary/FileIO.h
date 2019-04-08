@@ -4,8 +4,11 @@
 
 class FileIO
 {
-public:
+private : 
 	FileIO();
 	~FileIO();
+public:
+	void Save();
+	void Load();
 };
 

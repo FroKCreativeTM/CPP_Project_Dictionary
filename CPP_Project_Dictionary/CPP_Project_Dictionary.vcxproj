@@ -123,15 +123,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DevelopMenu.cpp" />
     <ClCompile Include="DIctMain.cpp" />
+    <ClCompile Include="DictMenu.cpp" />
     <ClCompile Include="FileIO.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DevelopMenu.h" />
     <ClInclude Include="DIctMain.h" />
     <ClInclude Include="FileIO.h" />
     <ClInclude Include="Defines.h" />
     <ClInclude Include="Macro.h" />
+    <ClInclude Include="DictMenu.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="dict.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

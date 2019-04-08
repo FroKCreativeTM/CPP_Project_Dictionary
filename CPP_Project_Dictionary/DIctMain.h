@@ -1,17 +1,19 @@
 #pragma once
 
 #include "Defines.h"
+#include "DictMenu.h"
+#include "DevelopMenu.h"
 
 class DictMain
 {
-private : 
+private :
+	DictMain();
+	~DictMain();
 	static DictMain* instance;
 
 public:
-	DictMain();
-	~DictMain();
 	static DictMain* GetInstance();
 	static void DestInstance();
-	void Run();
+	void MainRun();
 };
 
