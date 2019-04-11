@@ -1,8 +1,6 @@
 #pragma once
 
 #include "Defines.h"
-#include "DictMenu.h"
-#include "DevelopMenu.h"
 
 class DictMain
 {
@@ -16,4 +14,3 @@ public:
 	static void DestInstance();
 	void MainRun();
 };
-

@@ -1,18 +1,32 @@
 #include "DIctMain.h"
+#include "FileIO.h"
+
 
 int main()
 {
 	setlocale(LC_ALL, "korean");
-
-	if (!DictMain::GetInstance())
+	
+	if (!FileIO::GetInstance())
 	{
-		DictMain::DestInstance();
+		FileIO::DestroyInstance();
 		return 0;
 	}
 
-	DictMain::GetInstance()->MainRun();
+	FileIO::GetInstance()->Save();
 
-	DictMain::DestInstance();
+	//FileIO::GetInstance()->Load();
+
+	FileIO::DestroyInstance();
+
+	//if (!DictMain::GetInstance())
+	//{
+	//	DictMain::DestInstance();
+	//	return 0;
+	//}
+
+	//DictMain::GetInstance()->MainRun();
+
+	//DictMain::DestInstance();
 
 	return 0;
 }

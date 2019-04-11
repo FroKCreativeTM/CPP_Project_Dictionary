@@ -1,4 +1,6 @@
 ﻿#include "DIctMain.h"
+#include "DictMenu.h"
+#include "DevelopMenu.h"
 
 DictMain* DictMain::instance = NULL;
 
@@ -23,9 +25,12 @@ void DictMain::DestInstance()
 void DictMain::MainRun()
 {
 	int iMenu = 0;
+	DictMenu cDM;
 
 	while (iMenu <= MM_NONE || iMenu > MM_DEVELOP)
 	{
+		system("cls");
+		wcout << L"==========\t메인 메뉴\t==========" << endl;
 		wcout << L"1. 단어 찾기" << endl;
 		wcout << L"2. 저장된 단어 보기" << endl;
 		wcout << L"3. 끝내기" << endl;
@@ -34,15 +39,19 @@ void DictMain::MainRun()
 		switch (iMenu)
 		{
 		case MM_SEARCH : 
-			Search();
+			iMenu = 0;
+			cDM.Search();
 			break;
 		case MM_SAVED : 
-			Saved();
+			iMenu = 0;
+			cDM.Saved();
 			break;
 		case MM_EXIT : 
+			wcout << L"종료!" << endl;
 			return;
 			break;
 		case MM_DEVELOP : 
+			iMenu = 0;
 			break;
 		}
 	}

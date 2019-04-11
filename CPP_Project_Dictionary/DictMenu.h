@@ -2,5 +2,11 @@
 
 #include "Defines.h"
 
-void Search();
-void Saved();
+class DictMenu
+{
+private : 
+
+public : 
+	void Search();
+	void Saved();
+};

@@ -18,7 +18,7 @@ void DeveloperMenu()
 
 	while (iMenu <= 1 || iMenu > 3)
 	{
-		wcout << L"개발자 모드" << endl;
+		wcout << L"==========\t개발자 모드\t==========" << endl;
 		wcout << L"1. 단어 추가" << endl;
 		wcout << L"2. 단어 삭제" << endl;
 		wcout << L"3. 끝내기" << endl;

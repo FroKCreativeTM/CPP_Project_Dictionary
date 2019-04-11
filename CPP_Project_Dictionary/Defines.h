@@ -1,21 +1,29 @@
 #pragma once
 
+#pragma warning(disable:4996)
+
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <wchar.h>
 #include <Windows.h>
+#include <locale>
+#include <codecvt>
 using namespace std;
 
 #include "Macro.h"
 
+#define DICT_MAX 1000
 
 typedef wchar_t wchar;
 
 typedef struct _tagDictWord
 {
-	wchar word;
-	wchar meaning;
+	wchar * word;
+	wchar * meaning;
 }DictWord;
+
+static DictWord tDW[DICT_MAX];
 
 enum MAINMENU
 {
