@@ -5,16 +5,16 @@
 int main()
 {
 	setlocale(LC_ALL, "korean");
-	
+	Dictionary mainDic;
+
 	if (!FileIO::GetInstance())
 	{
 		FileIO::DestroyInstance();
 		return 0;
 	}
 
-	FileIO::GetInstance()->Save();
-
-	//FileIO::GetInstance()->Load();
+	FileIO::GetInstance()->Save(&mainDic);
+	FileIO::GetInstance()->Load(&mainDic);
 
 	FileIO::DestroyInstance();
 

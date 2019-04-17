@@ -20,35 +20,52 @@ void FileIO::DestroyInstance()
 	SAFE_DELETE(instance);
 }
 
-void FileIO::Save()
+void FileIO::Save(Dictionary* dicParam)
 {
 	wofstream ToSaveFile(L"data.txt");
 
-	for (int i = 0; i < DICT_MAX; i++)
+	if (!ToSaveFile)
+		return;
+
+	ToSaveFile.imbue(locale("kor"));
+
+	ToSaveFile << dicParam->iSize;
+
+	// for문은 MAX 변수를 생성해서 그걸로 컨트롤 하는 방향으로
+	for (int i = 0; i < dicParam->iSize; i++)
 	{
-		int iSize = wcslen(L"wchar");
-		tDW[i].word = new wchar[iSize + 1];
-
-		wcscpy(tDW[i].word, L"word");
-
-		iSize = wcslen(L"meaning");
-		tDW[i].meaning = new wchar[iSize + 1];
-		wcscpy(tDW[i].meaning, L"meaning");
-	
-		ToSaveFile << tDW[i].word << L" " << tDW[i].meaning << endl;
-
-		delete[] tDW[i].word;
-		delete[] tDW[i].meaning;
+		if (i != dicParam->iSize - 1)
+			ToSaveFile << dicParam->tDW[i].word << endl << dicParam->tDW[i].meaning << endl;
+		else
+			ToSaveFile << dicParam->tDW[i].word << endl << dicParam->tDW[i].meaning;
 	}
+
+	ToSaveFile.close();
 }
 
-void FileIO::Load()
+void FileIO::Load(Dictionary* dicParam)
 {
 	wifstream ToLoadFile(L"data.txt");
 
-	wstring wline;
-	for(int i=0;i<DICT_MAX;i++)
+	if (!ToLoadFile)
 	{
+		wcerr << L"데이터 파일이 없습니다." << endl;
+		return;
+	}
 
+	ToLoadFile.imbue(locale("kor"));
+
+	ToLoadFile >> dicParam->iSize;
+
+	while (!ToLoadFile.eof())
+	{
+		int i = 0;
+
+		getline(ToLoadFile, dicParam->tDW[i].word);
+		getline(ToLoadFile, dicParam->tDW[i].meaning);
+
+		wcout << dicParam->tDW[i].word << " " << dicParam->tDW[i].meaning << endl;
+
+		i++;
 	}
 }

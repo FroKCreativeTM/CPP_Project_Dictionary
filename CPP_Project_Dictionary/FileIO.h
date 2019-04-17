@@ -11,7 +11,7 @@ private :
 public:
 	static FileIO* GetInstance();
 	static void DestroyInstance();
-	void Save();
-	void Load();
+	void Save(Dictionary* dicParam);
+	void Load(Dictionary* dicParam);
 };
 

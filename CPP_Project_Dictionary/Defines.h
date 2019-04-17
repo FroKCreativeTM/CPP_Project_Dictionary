@@ -13,17 +13,21 @@ using namespace std;
 
 #include "Macro.h"
 
-#define DICT_MAX 1000
+#define DICT_MAX 1024
 
 typedef wchar_t wchar;
 
 typedef struct _tagDictWord
 {
-	wchar * word;
-	wchar * meaning;
+	wstring word;
+	wstring meaning;
 }DictWord;
 
-static DictWord tDW[DICT_MAX];
+typedef struct _tagDictionary
+{
+	DictWord tDW[DICT_MAX];
+	int iSize;
+}Dictionary;
 
 enum MAINMENU
 {
